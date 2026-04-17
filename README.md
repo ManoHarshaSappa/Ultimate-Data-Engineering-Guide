@@ -12,6 +12,209 @@ A single, complete reference for everything in modern data engineering — funda
 
 ---
 
+## Detailed Guide Files
+
+Each section below has a standalone deep-dive file in the [`guide/`](guide/) folder:
+
+| # | File | What's Inside |
+|---|------|---------------|
+| 01 | [Introduction](guide/01-introduction.md) | What is DE, career paths, job levels, roadmap, glossary |
+| 02 | [Fundamentals](guide/02-fundamentals.md) | 4 Vs, Lambda/Kappa/Medallion, ETL vs ELT, batch vs streaming |
+| 03 | [Essential Skills](guide/03-essential-skills.md) | Python, SQL, Git, Linux, Docker, Cloud basics |
+| 04 | [Advanced Skills](guide/04-advanced-skills.md) | Kafka, Spark, MapReduce, Flink, HDFS deep dives |
+| 05 | [Data Storage](guide/05-data-storage.md) | SQL/NoSQL, Delta Lake, Iceberg, file formats, warehouses |
+| 06 | [Orchestration](guide/06-orchestration.md) | Airflow, Prefect, Kestra, Dagster, dbt workflows |
+| 07 | [Cloud Platforms](guide/07-cloud-platforms.md) | AWS, GCP, Azure services, Terraform patterns |
+| 08 | [dbt & Data Modeling](guide/08-dbt-modeling.md) | Full Kimball project, incremental models, SCD Type 2, tests |
+| 09 | [Hands-On Course](guide/09-hands-on-course.md) | 9-week structured learning plan with exercises |
+| 10 | [Tools Catalog](guide/10-tools-catalog.md) | 200+ tools with decision guides and comparisons |
+| 11 | [Case Studies](guide/11-case-studies.md) | 25 company deep-dives: Netflix, Uber, LinkedIn, Airbnb… |
+| 12 | [Best Practices](guide/12-best-practices.md) | Production patterns, security, CI/CD, cost optimization |
+| 13 | [Interview Prep](guide/13-interview-prep.md) | 56+ Q&As, SQL coding, system design, behavioral |
+| 14 | [Books & Resources](guide/14-books-resources.md) | 35+ books with summaries and learning paths |
+| 15 | [Communities](guide/15-communities.md) | Discords, Slacks, podcasts, newsletters, creators |
+| 16 | [Projects](guide/16-projects.md) | 10 portfolio projects with full implementation guides |
+
+---
+
+## Architecture Diagrams
+
+### End-to-End Modern Data Platform
+
+```mermaid
+graph LR
+    A[("Source Systems\nPostgres · Salesforce\nStripe · APIs")] --> B
+
+    subgraph Ingestion
+        B["Fivetran / Airbyte\nDebezium CDC\ndlt / Meltano"]
+    end
+
+    B --> C
+
+    subgraph Data Lake — Object Storage S3 / GCS
+        C[("Bronze\nRaw · Append-only")]
+        C --> D[("Silver\nCleaned · Validated")]
+        D --> E[("Gold\nAggregated · BI-ready")]
+    end
+
+    subgraph Transformation
+        F["Apache Spark\nPySpark Jobs"]
+        G["dbt\nSQL Models"]
+    end
+
+    C --> F --> D
+    D --> G --> E
+
+    subgraph Orchestration
+        H["Apache Airflow\nPrefect · Dagster"]
+    end
+
+    H -.->|schedules| F
+    H -.->|schedules| G
+
+    E --> I
+
+    subgraph Serving
+        I["Data Warehouse\nSnowflake · BigQuery\nRedshift"]
+        I --> J["BI Tools\nMetabase · Superset\nTableau · Looker"]
+        I --> K["ML / Data Science\nNotebooks · MLflow"]
+    end
+```
+
+---
+
+### Medallion Architecture
+
+```mermaid
+graph TD
+    RAW["🗄️ Raw Sources\nDatabases · APIs · Files · Streams"]
+
+    RAW --> BRONZE
+
+    subgraph BRONZE ["🥉 Bronze — Raw Zone"]
+        B1["Append-only ingestion\nNo transformations\nFull history preserved"]
+    end
+
+    BRONZE --> SILVER
+
+    subgraph SILVER ["🥈 Silver — Cleaned Zone"]
+        S1["Deduplication\nType casting & validation\nNull handling\nStandardised schemas"]
+    end
+
+    SILVER --> GOLD
+
+    subgraph GOLD ["🥇 Gold — Business Zone"]
+        G1["Dimensional models\nFact & dimension tables\nPre-aggregated metrics\nBI & ML ready"]
+    end
+
+    GOLD --> SERVE
+
+    subgraph SERVE ["📊 Serving Layer"]
+        SV1["BI Dashboards"]
+        SV2["Ad-hoc SQL"]
+        SV3["ML Features"]
+    end
+```
+
+---
+
+### Streaming Pipeline Architecture
+
+```mermaid
+graph LR
+    P["⚡ Producers\nWeb · Mobile · IoT\nMicroservices"]
+
+    P --> K
+
+    subgraph Kafka Cluster
+        K["Topics · Partitions\nSchema Registry\nConsumer Groups"]
+    end
+
+    K --> SP
+
+    subgraph Stream Processing
+        SP["Apache Flink\nor\nSpark Structured Streaming"]
+    end
+
+    SP --> DL[("Delta Lake\nIceberg\nBronze")]
+
+    DL --> DBT["dbt Incremental\nModels"]
+    DBT --> GLD[("Gold\nAggregates")]
+
+    GLD --> DASH["Grafana\nReal-time Dashboard"]
+
+    K --> DLQ[("Dead Letter Queue\nFailed Events")]
+```
+
+---
+
+### dbt Transformation Layers
+
+```mermaid
+graph TD
+    SRC[("Source Tables\nRaw warehouse schemas")]
+
+    SRC --> STG
+
+    subgraph STG ["Staging Layer — Views"]
+        S1["stg_postgres__orders"]
+        S2["stg_stripe__payments"]
+        S3["stg_salesforce__accounts"]
+    end
+
+    STG --> INT
+
+    subgraph INT ["Intermediate Layer — Ephemeral"]
+        I1["int_orders_enriched"]
+        I2["int_payments_resolved"]
+    end
+
+    INT --> MART
+
+    subgraph MART ["Marts Layer — Tables"]
+        M1["fct_orders\n(incremental, partitioned)"]
+        M2["fct_payments\n(incremental)"]
+        M3["dim_customers\n(SCD Type 2)"]
+        M4["dim_products\n(table)"]
+    end
+
+    MART --> BI["📊 BI Tools\nMetabase · Looker · Tableau"]
+```
+
+---
+
+### CDC Pipeline with Debezium
+
+```mermaid
+graph LR
+    PG[("PostgreSQL\nwal_level=logical\nREPLICA IDENTITY FULL")]
+
+    PG -->|WAL stream| DEB
+
+    subgraph Kafka Connect
+        DEB["Debezium\nConnector"]
+    end
+
+    DEB -->|before·after·op| KF
+
+    subgraph Kafka
+        KF["Topic:\npostgres.public.orders"]
+    end
+
+    KF --> SP
+
+    subgraph Stream Processing
+        SP["Spark / Flink\nforeachBatch MERGE"]
+    end
+
+    SP -->|UPSERT + soft-delete| ICE[("Apache Iceberg\nor Delta Lake\nBronze CDC table")]
+
+    ICE --> DBT["dbt\nResolve CDC history\n→ current state"]
+    DBT --> GLD[("Gold\nCurrent snapshot")]
+```
+
+---
+
 ## Table of Contents
 
 1. [What is Data Engineering?](#1-what-is-data-engineering)
