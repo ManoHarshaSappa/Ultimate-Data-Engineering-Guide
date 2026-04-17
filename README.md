@@ -94,14 +94,14 @@ Generation → Ingestion → Transformation → Serving → Analytics/ML/BI
 ```
 
 **End-to-End Modern Data Platform:**
-```
-┌──────────┐    ┌──────────┐    ┌───────────────────────────────┐    ┌──────────┐
-│  Sources │───▶│  Ingest  │───▶│  Data Lake (Bronze→Silver→Gold│───▶│  Serving │
-│ DB/API/  │    │ Kafka /  │    │  S3 / GCS / ADLS              │    │ Warehouse│
-│ Events   │    │ Fivetran │    │  Delta / Iceberg / Hudi        │    │ BI / ML  │
-└──────────┘    └──────────┘    └───────────────────────────────┘    └──────────┘
-                                          │ Transform
-                                    Spark / dbt / Airflow
+
+```mermaid
+graph LR
+    A["Sources\nDB / API / Events"] --> B["Ingest\nKafka / Fivetran"]
+    B --> C["Bronze\nRaw Data\nS3 / GCS / ADLS"]
+    C -->|"Spark / dbt"| D["Silver\nCleaned\nValidated"]
+    D -->|"Aggregated"| E["Gold\nBusiness Ready\nDelta / Iceberg"]
+    E --> F["Serving\nWarehouse / BI / ML"]
 ```
 
 **How it differs from other roles:**
@@ -198,12 +198,12 @@ Generation → Ingestion → Transformation → Serving → Analytics/ML/BI
 - Silver: cleaned, validated, deduplicated data
 - Gold: business-ready aggregations, dimensional models for BI
 
-```
-┌──────────┐     ┌──────────────────┐     ┌──────────────────┐     ┌──────────────────┐
-│  Source  │────▶│  Bronze (Raw)    │────▶│  Silver (Clean)  │────▶│  Gold (Business) │────▶ BI / ML
-│ DB/Files │     │  Exact copy      │     │  Validated       │     │  Aggregated      │
-└──────────┘     │  No transforms   │     │  Deduplicated    │     │  Dimensional     │
-                 └──────────────────┘     └──────────────────┘     └──────────────────┘
+```mermaid
+graph LR
+    A["Source\nDB / Files"] --> B["Bronze\nRaw Copy\nNo transforms"]
+    B --> C["Silver\nCleaned\nDeduplicated"]
+    C --> D["Gold\nAggregated\nDimensional Models"]
+    D --> E["BI / ML / Reports"]
 ```
 
 **Data Mesh**
@@ -640,12 +640,13 @@ models/
 ```
 
 **dbt Transformation Layers:**
-```
-┌────────────┐     ┌─────────────────┐     ┌──────────────────┐     ┌───────────────┐
-│  Sources   │────▶│  Staging (stg_) │────▶│ Intermediate(int_│────▶│  Marts (fct_  │────▶ BI
-│ Raw tables │     │  Rename + Cast  │     │ Business logic   │     │  dim_) Final  │
-└────────────┘     │  Views only     │     │ Joins/Calcs      │     │  Tables       │
-                   └─────────────────┘     └──────────────────┘     └───────────────┘
+
+```mermaid
+graph LR
+    A["Sources\nRaw Tables"] --> B["Staging stg_\nRename and Cast\nViews only"]
+    B --> C["Intermediate int_\nBusiness Logic\nJoins and Calcs"]
+    C --> D["Marts fct_ dim_\nFinal Tables\nfor BI"]
+    D --> E["BI Tools\nDashboards"]
 ```
 
 ### dbt Key Commands
@@ -771,13 +772,13 @@ Producers → Brokers (Topics / Partitions) → Consumers (Consumer Groups)
 ```
 
 **Streaming Pipeline:**
-```
-┌──────────┐    ┌──────────────────────────┐    ┌───────────────┐    ┌──────────┐
-│Producers │───▶│  Kafka Broker            │───▶│  Consumers    │───▶│  Sink    │
-│ App/DB/  │    │  Topic: orders           │    │  Flink/Spark  │    │ DWH/Lake │
-│ Sensors  │    │  Partition 0,1,2…  +Avro │    │  Consumer Grp │    │ / Search │
-└──────────┘    └──────────────────────────┘    └───────────────┘    └──────────┘
-                         │ Schema Registry validates all messages
+
+```mermaid
+graph LR
+    A["Producers\nApp / DB / Sensors"] --> B["Kafka Broker\nTopics and Partitions"]
+    B --> C["Schema Registry\nAvro / Protobuf"]
+    B --> D["Consumers\nFlink / Spark Streaming"]
+    D --> E["Sink\nDWH / Lake / Search"]
 ```
 
 **Topic internals:**
@@ -911,12 +912,12 @@ CDC captures every INSERT, UPDATE, DELETE from a source database and streams the
 3. Changes published to Kafka as events with `before`, `after`, `op` fields
 4. Consumer reads events and applies them to the data lake
 
-```
-┌──────────┐    ┌──────────────┐    ┌──────────────┐    ┌──────────────┐    ┌──────────┐
-│ Postgres │───▶│  WAL / binlog│───▶│   Debezium   │───▶│    Kafka     │───▶│ Data Lake│
-│ MySQL DB │    │  (change log)│    │ Kafka Connect│    │ CDC topic    │    │ / DWH    │
-└──────────┘    └──────────────┘    └──────────────┘    └──────────────┘    └──────────┘
-                                        before/after/op events streamed in real time
+```mermaid
+graph LR
+    A["Postgres / MySQL\nSource DB"] --> B["WAL / binlog\nChange Log"]
+    B --> C["Debezium\nKafka Connect"]
+    C --> D["Kafka\nCDC Topic\nbefore / after / op"]
+    D --> E["Data Lake\nor DWH"]
 ```
 
 ### Debezium
