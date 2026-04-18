@@ -972,4 +972,184 @@ Build a complete end-to-end pipeline that:
 
 ---
 
+---
+
+## Bonus: DataExpert.io Free 6-Week YouTube Bootcamp
+
+In addition to the DataTalks.Club Zoomcamp above, **Zach Wilson's free 6-week YouTube bootcamp** from DataExpert.io is another top-tier free resource. It covers a more analytics-engineering-heavy curriculum with deep dives into data modeling, Spark, Flink, and experimentation.
+
+**Access it at:** [YouTube Boot Camp Intro](https://youtu.be/myhe0LXpCeo)
+
+**Required software:** Docker, Python 3.11+, DataGrip (or any SQL editor)
+
+**Database setup:** [Boot Camp Database Setup](https://www.dataexpert.io/lesson/boot-camp-database-setup-yt)
+
+### Week-by-Week Curriculum
+
+#### Week 1 — Dimensional Data Modeling
+
+Work with the `actor_films` dataset. Build cumulative tables and SCD Type 2 history tracking.
+
+| Session | Link |
+|---------|------|
+| Day 1 Lecture | [Dimensional Modeling Day 1 Lecture](https://www.dataexpert.io/lesson/dimensional-data-modeling-lecture-day-1-yt) |
+| Day 1 Lab | [Dimensional Modeling Day 1 Lab](https://www.dataexpert.io/lesson/dimensional-data-modeling-lab-day-1-yt) |
+| Day 2 Lecture | [Dimensional Modeling Day 2 Lecture](https://www.dataexpert.io/lesson/dimensional-data-modeling-day-2-lecture-yt) |
+| Day 2 Lab | [Dimensional Modeling Day 2 Lab](https://www.dataexpert.io/lesson/dimensional-data-modeling-day-2-lab-yt) |
+| Day 3 Lecture | [Dimensional Modeling Day 3 Lecture](https://www.dataexpert.io/lesson/dimensional-data-modeling-day-3-lecture-yt) |
+| Day 3 Lab | [Dimensional Modeling Day 3 Lab](https://www.dataexpert.io/lesson/dimensional-data-modeling-day-3-lab-yt) |
+
+**Week 1 Homework tasks:**
+1. DDL for an `actors` table with a `films` struct array, `quality_class` enum, and `is_active` boolean
+2. Cumulative query to populate `actors` one year at a time
+3. DDL for `actors_history_scd` (Type 2 SCD) — tracks `quality_class` and `is_active` over time
+4. Backfill query for `actors_history_scd` (single query, full history)
+5. Incremental query for `actors_history_scd` (combines prior SCD data + new actor data)
+
+---
+
+#### Week 2 — Fact Data Modeling
+
+Work with `devices` and `events` datasets. Build cumulative fact tables and compressed integer date lists.
+
+| Session | Link |
+|---------|------|
+| Day 1 Lecture | [Fact Modeling Day 1 Lecture](https://www.dataexpert.io/lesson/fact-data-modeling-day-1-lecture-yt) |
+| Day 1 Lab | [Fact Modeling Day 1 Lab](https://www.dataexpert.io/lesson/fact-data-modeling-day-1-lab-yt) |
+| Day 2 Lecture | [Fact Modeling Day 2 Lecture](https://www.dataexpert.io/lesson/fact-data-modeling-day-2-lecture-yt) |
+| Day 2 Lab | [Fact Modeling Day 2 Lab](https://www.dataexpert.io/lesson/fact-data-modeling-day-2-lab-yt) |
+| Day 3 Lecture | [Fact Modeling Day 3 Lecture](https://www.dataexpert.io/lesson/fact-data-modeling-day-3-lecture-yt) |
+| Day 3 Lab | [Fact Modeling Day 3 Lab](https://www.dataexpert.io/lesson/fact-data-modeling-day-3-lab-yt) |
+
+**Week 2 Homework tasks:**
+1. Deduplicate `game_details` dataset
+2. DDL for `user_devices_cumulated` (MAP<browser_type, ARRAY[DATE]>)
+3. Cumulative query for `device_activity_datelist` from events
+4. `datelist_int` generation — compress date arrays into integer bitsets
+5. DDL for `hosts_cumulated` with `host_activity_datelist`
+6. Incremental query for `host_activity_datelist`
+7. Monthly reduced fact table DDL `host_activity_reduced` (month, host, hit_array, unique_visitors_array)
+8. Incremental query to load `host_activity_reduced` day-by-day
+
+---
+
+#### Week 3 — Apache Spark Fundamentals
+
+Set up Spark + Iceberg with Docker. Run PySpark jobs in Jupyter notebooks. Write unit tests for PySpark.
+
+| Session | Link |
+|---------|------|
+| Day 1 Lecture | [Spark Day 1 Lecture](https://www.dataexpert.io/lesson/apache-spark-day-1-lecture-yt) |
+| Day 1 Lab | [Spark Day 1 Lab](https://www.dataexpert.io/lesson/apache-spark-day-1-lab-yt) |
+| Day 2 Lecture | [Spark Day 2 Lecture](https://www.dataexpert.io/lesson/apache-spark-day-2-lecture-yt) |
+| Day 2 Lab | [Spark Day 2 Lab](https://www.dataexpert.io/lesson/apache-spark-day-2-lab-yt) |
+| Day 3 Lecture | [Spark Day 3 Lecture](https://www.dataexpert.io/lesson/apache-spark-day-3-lecture-yt) |
+| Day 3 Lab | [Spark Day 3 Lab](https://www.dataexpert.io/lesson/apache-spark-day-3-lab-yt) |
+
+**Setup:**
+```bash
+# Navigate to Week 3 directory
+cd bootcamp/materials/3-spark-fundamentals
+
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Start Spark + Iceberg in Docker
+make up
+# or on Windows: docker compose up
+
+# Access Jupyter at localhost:8888
+# Run: event_data_pyspark.ipynb
+
+# Run unit tests
+python -m pytest
+```
+
+---
+
+#### Week 4 — Real-Time Pipelines with Apache Flink + Kafka
+
+Stream web traffic events from a cloud Kafka cluster into PostgreSQL using PyFlink. Real cloud data, real streaming.
+
+| Session | Link |
+|---------|------|
+| Flink Setup | [Flink Lab Setup](https://www.dataexpert.io/lesson/flink-lab-setup-yt) |
+| Day 1 Lecture | [Streaming Pipelines Day 1 Lecture](https://www.dataexpert.io/lesson/streaming-pipelines-day-1-lecture-yt) |
+| Day 1 Lab | [Streaming Pipelines Day 1 Lab](https://www.dataexpert.io/lesson/streaming-pipelines-day-1-lab-yt) |
+| Day 2 Lecture | [Streaming Pipelines Day 2 Lecture](https://www.dataexpert.io/lesson/streaming-pipelines-day-2-lecture-yt) |
+| Day 2 Lab | [Streaming Pipelines Day 2 Lab](https://www.dataexpert.io/lesson/streaming-pipelines-day-2-lab-yt) |
+
+**What you build:** A PyFlink job that reads real-time web events from Confluent Cloud Kafka, enriches with IP geolocation, and writes `processed_events` to PostgreSQL.
+
+```bash
+# Configure credentials in flink-env.env (get from bootcamp.techcreator.io)
+cp example.env flink-env.env
+
+# Build Docker image and start Flink cluster
+make up
+# Wait for Flink UI at http://localhost:8081
+
+# Submit the PyFlink job
+make job
+
+# Verify events are flowing
+make psql
+# Then: SELECT COUNT(*) FROM processed_events;
+```
+
+---
+
+#### Week 4b — Applying Analytical Patterns
+
+Reusable analytical patterns for common data problems: state machines, funnels, sessionization.
+
+| Session | Link |
+|---------|------|
+| Day 1 Lecture | [Analytical Patterns Day 1 Lecture](https://www.dataexpert.io/lesson/data-quality-patterns-day-1-lecture-yt) |
+| Day 1 Lab | [Analytical Patterns Day 1 Lab](https://www.dataexpert.io/lesson/data-quality-patterns-day-1-lab-yt) |
+| Day 2 Lecture | [Analytical Patterns Day 2 Lecture](https://www.dataexpert.io/lesson/data-quality-patterns-day-2-lecture-yt) |
+
+---
+
+#### Week 5 — KPIs and Experimentation
+
+Design and analyze A/B experiments. Build KPI tracking pipelines. Understand leading vs lagging metrics.
+
+| Session | Link |
+|---------|------|
+| Day 1 Lecture | [KPIs & Experimentation Day 1 Lecture](https://www.dataexpert.io/lesson/kpis-and-experimentation-day-1-lecture-yt) |
+| Day 1 Lab | [KPIs & Experimentation Day 1 Lab](https://www.dataexpert.io/lesson/kpis-and-experimentation-day-1-lab-yt) |
+| Day 2 Lecture | [KPIs & Experimentation Day 2 Lecture](https://www.dataexpert.io/lesson/kpis-and-experimentation-day-2-lecture-yt) |
+
+**Key concepts covered:**
+- **Leading metrics:** Early signals that predict future outcomes (sign-up rate, feature usage frequency)
+- **Lagging metrics:** Outcomes measured after the fact (revenue, retention, churn)
+- **Experiment design:** Null hypothesis, alternative hypothesis, test cell allocation (typically 50/50)
+- **A/B test analysis:** Statistical significance, sample size, guardrail metrics
+
+**Example experiments to design:**
+- A new subscription bundle vs existing offer — measure sign-up revenue
+- A social feature (view friend activity) — measure engagement metrics
+- A referral-based sign-up ad vs promotional ad — measure conversion and retention
+
+---
+
+#### Week 6 — Data Pipeline Maintenance
+
+Production pipeline operations: runbooks, incident response, prioritization, tech debt vs. business velocity.
+
+| Session | Link |
+|---------|------|
+| Day 1 Lecture | [Pipeline Maintenance Day 1 Lecture](https://www.dataexpert.io/lesson/data-pipeline-maintenance-day-1-lecture-yt) |
+| Day 1 Lab | [Pipeline Maintenance Day 1 Lab](https://www.dataexpert.io/lesson/data-pipeline-maintenance-day-1-lab-yt) |
+| Day 2 Lecture | [Pipeline Maintenance Day 2 Lecture](https://www.dataexpert.io/lesson/data-pipeline-maintenance-day-2-lecture-yt) |
+
+**Key concepts:**
+- Writing effective runbooks for on-call engineers
+- Prioritizing pipeline incidents by business impact
+- Managing tech debt without halting feature velocity
+- Data impact tracking: measuring the value pipelines deliver
+
+---
+
 *← [08 - dbt Modeling](08-dbt-modeling.md) | [10 - Tools Catalog](10-tools-catalog.md) →*

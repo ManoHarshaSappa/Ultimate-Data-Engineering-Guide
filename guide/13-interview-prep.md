@@ -25,6 +25,21 @@
 
 ## 1. How to Prepare for DE Interviews
 
+### Free Interview Resources from DataExpert.io
+
+These free resources from Zach Wilson's DataExpert.io directly address each interview round:
+
+| Interview Type | Free Video | Free Blog Post | Practice Problems |
+|---------------|-----------|---------------|-------------------|
+| **Data Structures & Algorithms** | [DSA Interview Video](https://www.dataexpert.io/course/the-data-structures-and-algorithms-interview) | [Hard Truth About DE Interviews](https://blog.dataengineer.io/p/the-hard-truth-about-data-engineering) | LeetCode Medium |
+| **SQL** | [SQL Interview Video](https://www.dataexpert.io/course/the-sql-interview) | [How to Pass the SQL Round](https://blog.dataengineer.io/p/how-to-pass-data-engineering-sql) | [50+ Free Data Lake SQL Questions](https://www.dataexpert.io/questions) |
+| **Data Modeling** | [Data Modeling Interview Video](https://www.dataexpert.io/course/the-data-modeling-interview) | [How to Pass the Data Modeling Round](https://blog.dataengineer.io/p/how-to-pass-the-data-modeling-round) | Design from a schema prompt |
+| **Data Architecture** | [Data Architecture Interview Video](https://dataexpert.io/course/the-data-architecture-interview) | [How to Pass the Architecture Round](https://blog.dataengineer.io/p/how-to-pass-the-data-architecture) | Draw system designs from memory |
+
+**Additional SQL practice:**
+- [100+ FAANG SQL Interview Questions](https://datalemur.com/sql-interview-questions) — Real questions from Meta, Amazon, Google, etc.
+- [50+ Data Lake SQL Questions (Free)](https://www.dataexpert.io/questions) — Hands-on practice on real data
+
 ### What Companies Actually Test
 
 | Round | What They Test | How to Prepare |

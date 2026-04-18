@@ -598,6 +598,41 @@ Serving pipeline:
 
 ---
 
+## 5b. Free Community-Guided Projects
+
+These are community-built, guided projects with full YouTube walkthroughs and GitHub repos. Build these to learn from experienced engineers:
+
+### Cloud & BigQuery Projects
+
+| Project | Guide | Stack | What You Build |
+|---------|-------|-------|---------------|
+| **Uber Data Engineering Project** | [YouTube](https://www.youtube.com/watch?v=WpQECq5Hx9g) | BigQuery, Mage, Looker | Full ETL pipeline analyzing Uber trip data — very popular portfolio project |
+| **Azure End-to-End DE Project** | [YouTube](https://www.youtube.com/watch?v=iQ41WqhHglk) | Azure Data Factory, Databricks, Synapse, Power BI | Migrate on-prem SQL Server to Azure lakehouse with dashboards |
+| **YouTube Metadata Pipeline (AWS)** | [GitHub](https://github.com/Proggleb/youtube_data_engineering_project) | AWS Lambda, S3, Glue, Athena | Extract metadata from YouTube videos using AWS free tier |
+
+### LLM & AI Data Engineering Projects
+
+These projects are from DataExpert.io's free YouTube curriculum. Each has a lecture + lab:
+
+| Project | Lecture | Lab | What You Build |
+|---------|---------|-----|---------------|
+| **Build a Pipeline with LLMs** | [Day 1 Lecture](https://www.dataengineer.io/course/large-language-models-day-1-lecture) | [Day 1 Lab](https://www.dataengineer.io/course/large-language-models-day-1-lab) | End-to-end LLM data pipeline from scratch |
+| **SQL Query Engine with LLMs + LangChain** | [Day 2 Lecture](https://www.dataengineer.io/course/large-language-models-day-2-lecture) | [Day 2 Lab](https://www.dataengineer.io/course/large-language-models-day-2-lab) | Natural language to SQL with LangChain and real databases |
+
+### Practical End-to-End Projects
+
+**Building a Practical Data Engineering Project** (by Simon Späti)
+
+A comprehensive project covering: web-scraping real-estate data → S3 → Spark + Delta Lake → data science with Jupyter → Druid ingestion → Superset dashboards → Dagster orchestration. One of the most complete free DE projects available.
+
+- [Blog post walkthrough](https://www.ssp.sh/blog/data-engineering-project-in-twenty-minutes/)
+- [GitHub repo](https://github.com/sspaeti-com/practical-data-engineering)
+- [DevOps companion repo](https://github.com/sspaeti-com/data-engineering-devops)
+
+**Tech stack:** Python, S3, Apache Spark, Delta Lake, Jupyter, Apache Druid, Apache Superset, Dagster
+
+---
+
 ## 6. Free Public Datasets
 
 | Dataset | Size | Format | Access | Best For |

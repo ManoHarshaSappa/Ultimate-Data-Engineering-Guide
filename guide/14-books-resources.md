@@ -138,6 +138,13 @@ As data engineering increasingly intersects with ML, this book bridges the gap. 
 | **Hadoop: The Definitive Guide** | Tom White | Hadoop ecosystem reference |
 | **Trino: The Definitive Guide** | Matt Fuller et al. | Trino/PrestoSQL deep dive |
 
+### DataOps & Production Engineering
+
+| Book | Author | Key Topics |
+|------|--------|-----------|
+| **Practical DataOps** | Simon Hollingsworth | Delivering agile data science at scale, DataOps methodology |
+| **Data Engineering Design Patterns** | Various | Reusable design patterns for building data pipelines and systems |
+
 ---
 
 ## 3. Free Learning Platforms & Courses
@@ -204,11 +211,17 @@ Recommended free-to-audit courses:
 
 | Course | Platform | Focus | Why It's Worth It |
 |--------|----------|-------|-------------------|
-| **DataExpert.io** | dataexpert.io | Complete DE bootcamp | Zach Wilson's 4/6-week boot camps, real projects, Discord community |
+| **DataExpert.io** | dataexpert.io | Complete DE bootcamp | Zach Wilson's 4/6-week boot camps, real projects, Discord community. Use code **HANDBOOK10** for a discount! |
 | **LearnDataEngineering.com** | learndataengineering.com | End-to-end DE skills | Andreas Kretz (Cookbook author), comprehensive curriculum |
 | **Udemy: The Complete Hands-On Introduction to Apache Airflow** | Udemy | Airflow | Marc Lamberti's course, highest-rated Airflow course |
 | **AlgoExpert Data Engineering** | algoexpert.io | DE system design | System design practice for interviews |
 | **ByteByteGo** | bytebytego.com | System design | Alex Xu's books and video content |
+| **Technical Freelancer Academy** | technicalfreelanceracademy.com | Freelance DE career | How to build a consulting career in data engineering. Use code **zwtech** for a discount! |
+| **Rock the JVM** | rockthejvm.com | Spark (Scala), Flink | Deep-dive Spark and Flink in Scala — for engineers who want to understand the JVM layer |
+| **Efficient Data Processing in Spark** | josephmachado.podia.com | Spark optimization | Joseph Machado's focused Spark course — practical, no fluff |
+| **Scaler** | scaler.com | DE fundamentals | Structured learning path for data engineering fundamentals |
+| **Udemy (Daniel Blanco)** | danielblanco.dev/links | Kafka, Spark, Airflow | High-quality courses from industry practitioner |
+| **Udemy (Shruti Mantri)** | udemy.com | Hadoop, Spark, cloud | Comprehensive big data engineering curriculum |
 
 ---
 
@@ -235,13 +248,15 @@ Certifications signal competence to hiring managers and give you a structured cu
 | **Google Professional Data Engineer** | Professional | BigQuery, Dataflow, Pub/Sub | $200 |
 | **Google Professional ML Engineer** | Professional | ML on GCP | $200 |
 
-### Azure Certifications
+### Azure & Microsoft Fabric Certifications
 
 | Certification | Level | Focus | Exam Cost |
 |--------------|-------|-------|-----------|
 | **Azure Fundamentals (AZ-900)** | Foundational | Azure basics | $165 |
+| **Azure Data Fundamentals (DP-900)** | Foundational | Data concepts on Azure | $165 |
 | **Azure Data Engineer Associate (DP-203)** | Associate | Synapse, ADLS, Data Factory | $165 |
-| **Azure Data Fundamentals (DP-900)** | Foundational | Data concepts | $165 |
+| **Microsoft Fabric Analytics Engineer Associate (DP-600)** | Associate | Fabric, Lakehouse, Dataflows | $165 |
+| **Microsoft Fabric Data Engineer Associate (DP-700)** | Associate | Fabric pipelines, real-time analytics | $165 |
 
 ### Databricks Certifications
 
@@ -276,6 +291,35 @@ The papers that shaped modern data engineering. Reading these gives you insight 
 | **Building a Universal Data Lakehouse** | Onehouse team | Practical guide to multi-format lakehouse design. |
 | **Big Data Quality: A Data Quality Profiling Model** | Various | Academic framework for data quality dimensions. |
 | **Lakehouse Paper Summary** | dataengineer.io | Collection of all major DE whitepapers in one place. |
+
+---
+
+## 6b. Data Engineering Glossaries
+
+Quick-reference glossaries when you encounter an unfamiliar term:
+
+| Glossary | URL | Coverage |
+|----------|-----|---------|
+| **Data Engineering Vault** | [ssp.sh/brain/data-engineering](https://www.ssp.sh/brain/data-engineering/) | Comprehensive living glossary by Simon Späti |
+| **Airbyte Data Glossary** | [glossary.airbyte.com](https://glossary.airbyte.com/) | Integration, ELT, connector terms |
+| **Data Engineering Wiki (Reddit)** | [dataengineering.wiki/Index](https://dataengineering.wiki/Index) | Community-maintained wiki |
+| **Secoda Glossary** | [secoda.co/glossary](https://www.secoda.co/glossary/) | Data catalog, governance, metadata terms |
+| **Databricks Glossary** | [databricks.com/glossary](https://www.databricks.com/glossary) | Spark, Delta Lake, Lakehouse terms |
+| **Dagster Glossary** | [dagster.io/glossary](https://dagster.io/glossary) | Orchestration, asset-centric terms |
+| **Airtable DE Glossary** | [airtable.com/shrGh8BqZbkfkbrfk](https://airtable.com/shrGh8BqZbkfkbrfk/tbluZ3ayLHC3CKsDb) | Curated community glossary |
+
+---
+
+## 6c. Design Patterns & Reusable Architectures
+
+Reusable patterns every data engineer should know:
+
+| Pattern | Resource | What It Solves |
+|---------|----------|---------------|
+| **Cumulative Table Design** | [github.com/DataExpert-io/cumulative-table-design](https://www.github.com/DataExpert-io/cumulative-table-design) | Efficiently maintain running totals and history without full reprocessing |
+| **Microbatch Deduplication** | [github.com/EcZachly/microbatch-hourly-deduped-tutorial](https://www.github.com/EcZachly/microbatch-hourly-deduped-tutorial) | Idempotent microbatch pipelines with exactly-once semantics |
+| **The Little Book of Pipelines** | [github.com/EcZachly/little-book-of-pipelines](https://www.github.com/EcZachly/little-book-of-pipelines) | Composable pipeline patterns for data engineering |
+| **Data Developer Platform** | [datadeveloperplatform.org/architecture](https://datadeveloperplatform.org/architecture/) | Reference architecture for self-serve data platforms |
 
 ---
 

@@ -80,18 +80,43 @@ These are the podcasts worth adding to your rotation. Listen during commutes, wo
 | Podcast | Host | Frequency | Why Listen |
 |---------|------|-----------|-----------|
 | **Data Engineering Podcast** | Tobias Macey | Weekly | The original and best DE podcast. Deep technical interviews on tools, platforms, and architecture. Every major tool creator has been on here. |
-| **The Analytics Engineering Podcast** | dbt Labs | Bi-weekly | dbt and analytics engineering focused — great for understanding the dbt ecosystem and analytics engineering as a discipline |
+| **The Data Engineering Show** | Databand.ai | Weekly | Tool-focused conversations with DE practitioners and vendors |
+| **The Analytics Engineering Podcast** | dbt Labs | Bi-weekly | dbt and analytics engineering focused — great for understanding the dbt ecosystem |
 | **The Data Stack Show** | Eric Dodds & Kostas Pardalis | Weekly | Conversations with engineers about their data stacks — practical and product-focused |
+| **Data Brew by Databricks** | Databricks | Monthly | Databricks, Delta Lake, Spark — direct from the source |
+| **The Data Cloud Podcast by Snowflake** | Snowflake | Weekly | Data cloud trends, customer stories, Snowflake ecosystem |
+| **Streaming Audio by Confluent** | Confluent | Weekly | Apache Kafka, event streaming, real-time data architectures |
+| **What's New in Data** | Striim | Bi-weekly | Real-time data integration, streaming analytics |
 | **Practical AI** | Daniel Whitenack & Chris Benson | Weekly | AI and data infrastructure — useful as DE intersects more with AI/ML |
+| **MLOps.community** | Various | Weekly | ML engineering + data engineering intersection, production ML |
 | **Software Engineering Daily** | Jeff Meyerson | Daily | Broader engineering, but covers data infrastructure topics regularly |
 | **Latent Space** | swyx & Alessio | Weekly | Technical deep dives on AI engineering and data infrastructure for AI |
 
-### Conversation-Style & Career Podcasts
+### Analytics & Business Intelligence Podcasts
+
+| Podcast | Host | Frequency | Why Listen |
+|---------|------|-----------|-----------|
+| **DataTopics** | DataTopics.io | Bi-weekly | Analytics engineering, BI tool ecosystem |
+| **The Datastack Show** | DataStackShow | Weekly | Modern data stack conversations, tool deep-dives |
+| **Analytics Power Hour** | Various | Bi-weekly | Analytics strategy, web analytics, business intelligence |
+| **Catalog & Cocktails** | Alation | Bi-weekly | Data governance, data catalog, metadata management |
+| **Datatalks** | DataTalks.Club | Irregular | Data engineering, ML, career conversations — free Zoomcamp companion |
+| **DataWare** | Ascend.io | Irregular | Data pipelines, data platforms, engineering workflows |
+
+### Career & General Podcasts
 
 | Podcast | Host | Frequency | Why Listen |
 |---------|------|-----------|-----------|
 | **Chain of Thought** | Various | Weekly | Interviews with AI and data infrastructure leaders |
 | **The Joe Reis Show** | Joe Reis | Irregular | Raw conversations about the state of data engineering |
+| **Drill to Detail with Mark Rittman** | Mark Rittman | Bi-weekly | Analytics architecture, dbt, semantic layers |
+| **Intricity101 Data Sharks** | Intricity | Bi-weekly | Enterprise data, data governance, architecture |
+| **The Data Engineering Side Of Data** | Various | Weekly | Engineering side of data platform decisions |
+| **The Data Scientist Show** | Various | Weekly | Data science + engineering intersection, career advice |
+| **The Data Chief** | ThoughtSpot | Weekly | Data leadership, CDO interviews, analytics strategy |
+| **Monday Morning Data Chat** | Various | Weekly | Casual data engineering conversations, tool comparisons |
+| **Open Source Data by Datastax** | Datastax | Bi-weekly | Cassandra, open-source data infrastructure |
+| **The Data Coffee Break Podcast** | Various | Weekly | Short-form DE topics, quick learning during breaks |
 
 **How to use podcasts for learning:**
 - Keep a note file for podcast highlights — things you heard that you need to look up
@@ -137,6 +162,10 @@ The newsletters worth your inbox space. Unlike social media, newsletters give yo
 | **All Hands on Data** | Data team collaboration topics |
 | **Interesting Data Gigs** | DE job postings curation |
 | **From An Engineer's Sight** | DE from a practitioner lens |
+| **Data Engineering Community** | Community-driven DE content and updates |
+| **Blef.fr Data News** | French/European DE news and analysis |
+| **Developing Dev** | Engineering career growth, system design |
+| **High Growth Engineer** | Career scaling for senior engineers |
 
 **Newsletter strategy:** Subscribe to Tier 1 first. Read for 1 month. If you're not reading it, unsubscribe — inbox noise hurts productivity.
 
@@ -235,6 +264,51 @@ Follow these engineers on LinkedIn for daily content, industry trends, and job o
 | **Hugo Lu** | [hugo-lu-confirmed](https://www.linkedin.com/in/hugo-lu-confirmed/) | dbt, analytics engineering |
 | **Tobias Macey** | [tmacey](https://www.linkedin.com/in/tmacey) | DE Podcast host, DE strategy |
 | **Julien Hurault** | [julienhuraultanalytics](https://www.linkedin.com/in/julienhuraultanalytics/) | Analytics engineering |
+| **Ankur Ranjan** | [thebigdatashow](https://www.linkedin.com/in/thebigdatashow/) | Spark, Databricks, interviews |
+| **Marc Lamberti** | [marclamberti](https://www.linkedin.com/in/marclamberti) | Apache Airflow expert |
+| **Ananth Packkildurai** | [ananthdurai](https://www.linkedin.com/in/ananthdurai/) | Data governance, data mesh |
+| **Manojkumar Vadivel** | [manojvsj](https://www.linkedin.com/in/manojvsj/) | Data engineering tutorials |
+| **Li Yin (AdalFlow)** | [li-yin-ai](https://www.linkedin.com/in/li-yin-ai/) | LLM data pipelines, AI engineering |
+| **Hassaan Akbar** | [ehassaan](https://www.linkedin.com/in/ehassaan) | Data engineering projects |
+| **Daniel Ciocirlan** | [danielciocirlan](https://www.linkedin.com/in/danielciocirlan) | Scala, Spark, Rock the JVM |
+| **Marcos Ortiz** | [mlortiz](https://www.linkedin.com/in/mlortiz) | ML engineering, data science |
+
+---
+
+## 7b. X/Twitter Creators
+
+| Creator | X/Twitter Handle | Followers | Focus |
+|---------|-----------------|-----------|-------|
+| **ByteByteGo (Alex Xu)** | [@alexxubyte](https://twitter.com/alexxubyte/) | 100K+ | System design diagrams |
+| **Dan Kornas** | [@dankornas](https://www.twitter.com/dankornas) | 66K+ | Data engineering tutorials |
+| **Zach Wilson** | [@EcZachly](https://www.twitter.com/EcZachly) | 30K+ | DE career, bootcamp content |
+| **Seattle Data Guy** | [@SeattleDataGuy](https://www.twitter.com/SeattleDataGuy) | 10K+ | AWS DE, career |
+| **SQLBI (Marco Russo)** | [@marcorus](https://x.com/marcorus) | 10K+ | Power BI, DAX |
+| **Joseph Machado** | [@startdataeng](https://twitter.com/startdataeng) | 5K+ | DE patterns, tutorials |
+| **Alex Merced** | [@amdatalakehouse](https://www.twitter.com/amdatalakehouse) | — | Apache Iceberg, lakehouses |
+| **John Kutay** | [@JohnKutay](https://x.com/JohnKutay) | — | Real-time data, streaming |
+| **Mehdi Ouazza** | [@mehd_io](https://x.com/mehd_io) | — | DE content, tutorials |
+
+---
+
+## 7c. Instagram & TikTok Creators
+
+### Instagram
+
+| Creator | Handle | Followers | Focus |
+|---------|--------|-----------|-------|
+| **Sundas Khalid** | [@sundaskhalidd](https://www.instagram.com/sundaskhalidd) | 300K+ | Data career, diversity in tech |
+| **Zach Wilson** | [@eczachly](https://www.instagram.com/eczachly) | 150K+ | DE bootcamp, career tips |
+| **Andreas Kretz** | [@learndataengineering](https://www.instagram.com/learndataengineering) | 5K+ | DE fundamentals |
+| **Alex Merced** | [@alexmercedcoder](https://www.instagram.com/alexmercedcoder) | — | Data lakehouse content |
+
+### TikTok
+
+| Creator | Handle | Followers | Focus |
+|---------|--------|-----------|-------|
+| **Zach Wilson** | [@eczachly](https://www.tiktok.com/@eczachly) | 70K+ | DE career, short-form tutorials |
+| **Alex Freberg** | [@alex_the_analyst](https://www.tiktok.com/@alex_the_analyst) | 10K+ | SQL, Excel, data analyst path |
+| **Mehdi Ouazza** | [@mehdio_datatv](https://www.tiktok.com/@mehdio_datatv) | — | DE short-form content |
 
 ---
 
