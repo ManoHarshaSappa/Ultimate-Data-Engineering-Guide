@@ -34,6 +34,12 @@ Each section below has a standalone deep-dive file in the [`guide/`](guide/) fol
 | 14 | [Books & Resources](guide/14-books-resources.md) | 35+ books with summaries and learning paths |
 | 15 | [Communities](guide/15-communities.md) | Discords, Slacks, podcasts, newsletters, creators |
 | 16 | [Projects](guide/16-projects.md) | 10 portfolio projects with full implementation guides |
+| 17 | [MLOps & ML Engineering](guide/17-mlops-ml-engineering.md) | Feature stores, training pipelines, model serving, drift detection |
+| 18 | [Data Observability](guide/18-data-observability.md) | Great Expectations, dbt tests, Soda, Monte Carlo, incident playbook |
+| 19 | [Data Governance](guide/19-data-governance.md) | Catalogs, lineage, data contracts, PII classification, GDPR/CCPA |
+| 20 | [Real-Time Analytics](guide/20-real-time-analytics.md) | ClickHouse, Druid, Pinot, Flink SQL, CDC, Lambda vs Kappa |
+| 21 | [DataOps & CI/CD](guide/21-dataops-cicd.md) | GitHub Actions, Terraform, Docker, test pyramid, deployment strategies |
+| 22 | [Salary & Career Guide](guide/22-salary-career.md) | Salary ranges, career ladder, negotiation tactics, promotion guide |
 
 ---
 
